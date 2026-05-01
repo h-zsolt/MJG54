@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bme3nadu6ecqr"]
+
+[ext_resource type="Script" uid="uid://dcy5pcc7xp65w" path="res://scripts/foodItem.gd" id="1_fbia8"]
+
+[node name="FoodItem" type="Node" unique_id=415581257]
+script = ExtResource("1_fbia8")
+
+[node name="SpoilTimer" type="Timer" parent="." unique_id=1486501336]
+autostart = true
