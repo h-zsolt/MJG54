@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UseStation" format=3 uid="uid://bleq2r4s6vgnt"]
+
+[ext_resource type="Script" uid="uid://t4p7be3ggvpc" path="res://resourceScripts/useStation.gd" id="1_u1x74"]
+
+[resource]
+script = ExtResource("1_u1x74")
+stationName = "pan"
+useTimeTable = Dictionary[String, Vector2]({
+"egg": Vector2(15, 20)
+})
+metadata/_custom_type_script = "uid://t4p7be3ggvpc"
