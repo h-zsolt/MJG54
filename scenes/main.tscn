@@ -1,3 +1,11 @@
 [gd_scene format=3 uid="uid://b4do0yxve65pe"]
 
+[ext_resource type="PackedScene" uid="uid://div11nohbacd" path="res://maps/garden_map.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://clfch7yy5s1j6" path="res://scenes/player.tscn" id="2_0wfyh"]
+
 [node name="Main" type="Node2D" unique_id=409236311]
+
+[node name="GardenMap" parent="." unique_id=575435717 instance=ExtResource("1_o5qli")]
+
+[node name="CharacterBody2D" parent="." unique_id=2087221926 instance=ExtResource("2_0wfyh")]
+position = Vector2(966, 145)

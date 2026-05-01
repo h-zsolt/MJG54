@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5jcscc630yc7"
-path="res://.godot/imported/MPlayer 1 idle.png-0cc50c6eebbeb916cde2514f5b616cab.ctex"
+uid="uid://50ybk0tfkklk"
+path="res://.godot/imported/Water_Tile.png-0611d626fd2e7379f08d20c1f469a678.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/player_m/MPlayer 1 idle.png"
-dest_files=["res://.godot/imported/MPlayer 1 idle.png-0cc50c6eebbeb916cde2514f5b616cab.ctex"]
+source_file="res://assets/tilesets/garden/tiles/Water_Tile.png"
+dest_files=["res://.godot/imported/Water_Tile.png-0611d626fd2e7379f08d20c1f469a678.ctex"]
 
 [params]
 

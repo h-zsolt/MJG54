@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpgthekhgba0j"
-path="res://.godot/imported/FPlayer 1 idle.png-3454f7ac758c48b01f7d33e7951e5a24.ctex"
+uid="uid://b6ypc0nx5vqkt"
+path="res://.godot/imported/Bridge_Wood.png-e7de674093de820f53df7415077f6f40.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/player_f/FPlayer 1 idle.png"
-dest_files=["res://.godot/imported/FPlayer 1 idle.png-3454f7ac758c48b01f7d33e7951e5a24.ctex"]
+source_file="res://assets/tilesets/garden/decorations/Bridge_Wood.png"
+dest_files=["res://.godot/imported/Bridge_Wood.png-e7de674093de820f53df7415077f6f40.ctex"]
 
 [params]
 

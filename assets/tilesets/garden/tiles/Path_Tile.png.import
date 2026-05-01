@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://co5ik42kc711o"
-path="res://.godot/imported/MPlayer 1 walking.png-202038615f5b6d8cc77d2d5fd827a3d1.ctex"
+uid="uid://6jgh5qfci7f2"
+path="res://.godot/imported/Path_Tile.png-71c54ad7fc2b7733c16997b29d296b3d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/player_m/MPlayer 1 walking.png"
-dest_files=["res://.godot/imported/MPlayer 1 walking.png-202038615f5b6d8cc77d2d5fd827a3d1.ctex"]
+source_file="res://assets/tilesets/garden/tiles/Path_Tile.png"
+dest_files=["res://.godot/imported/Path_Tile.png-71c54ad7fc2b7733c16997b29d296b3d.ctex"]
 
 [params]
 

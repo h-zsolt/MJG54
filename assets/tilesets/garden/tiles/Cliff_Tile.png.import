@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://p43d0vfk4vqa"
-path="res://.godot/imported/FPlayer 1 walking.png-0427e3a5a3e26299f009d7fc6d01a8e6.ctex"
+uid="uid://0483ema4vw7f"
+path="res://.godot/imported/Cliff_Tile.png-0841bd2566caa5594e66390096749629.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/player_f/FPlayer 1 walking.png"
-dest_files=["res://.godot/imported/FPlayer 1 walking.png-0427e3a5a3e26299f009d7fc6d01a8e6.ctex"]
+source_file="res://assets/tilesets/garden/tiles/Cliff_Tile.png"
+dest_files=["res://.godot/imported/Cliff_Tile.png-0841bd2566caa5594e66390096749629.ctex"]
 
 [params]
 
