@@ -3,9 +3,15 @@ extends CharacterBody2D
 var speed : int
 var last_direction : String
 
+const REWINDMAX: int = 300
+var rewinding: bool
+var rewindPostition: Array[Vector2]
+var rewindVelocity: Array[Vector2]
+var rewindAnimation: Array[StringName]
+var rewindFrame: Array[int]
 
 # temp
-var screen_size : Vector2
+var screen_size: Vector2
 
 func _ready():
 	
@@ -26,30 +32,59 @@ func get_input():
 
 func _physics_process(delta):
 	# movement
-	get_input()
-	move_and_slide()
-	
-	# restrict to window size
-	position = position.clamp(Vector2.ZERO, screen_size)
-		
-	# player animation & rotation
-	if velocity.length() != 0:
-		# If player is moving Right or Left
-		if abs(velocity.x) > abs(velocity.y):
-			if velocity.x > 0:
-				$AnimatedSprite2D.play("walk-e")
-				last_direction = "e"
-			else :
-				$AnimatedSprite2D.play("walk-w")
-				last_direction = "w"
+	if not rewinding:
+		get_input()
+		move_and_slide()
+		##Rewind recording
+		if rewindPostition.size() >= REWINDMAX:
+			rewindPostition.pop_front()
+		rewindPostition.append(position)
+		if rewindAnimation.size() >= REWINDMAX:
+			rewindAnimation.pop_front()
+		rewindAnimation.append($AnimatedSprite2D.animation)
+		if rewindVelocity.size() >= REWINDMAX:
+			rewindVelocity.pop_front()
+		rewindVelocity.append(velocity)
+		if rewindFrame.size() >= REWINDMAX:
+			rewindFrame.pop_front()
+		rewindFrame.append($AnimatedSprite2D.frame)
+		# restrict to window size
+		position = position.clamp(Vector2.ZERO, screen_size)
+		# player animation & rotation
+		if velocity.length() != 0:
+			# If player is moving Right or Left
+			if abs(velocity.x) > abs(velocity.y):
+				if velocity.x > 0:
+					$AnimatedSprite2D.play("walk-e")
+					last_direction = "e"
+				else :
+					$AnimatedSprite2D.play("walk-w")
+					last_direction = "w"
+			else:
+				# If player is moving Down or Up
+				if velocity.y > 0:
+					$AnimatedSprite2D.play("walk-s")
+					last_direction = "s"
+				else :
+					$AnimatedSprite2D.play("walk-n")
+					last_direction = "n"
+		# Return Player to Idle animation
 		else:
-			# If player is moving Down or Up
-			if velocity.y > 0:
-				$AnimatedSprite2D.play("walk-s")
-				last_direction = "s"
-			else :
-				$AnimatedSprite2D.play("walk-n")
-				last_direction = "n"
-	# Return Player to Idle animation
+			$AnimatedSprite2D.play("idle-" + last_direction)
 	else:
-		$AnimatedSprite2D.play("idle-" + last_direction)
+		var lastPos = rewindPostition.pop_back()
+		var lastVelocity = rewindVelocity.pop_back()
+		var lastAnimation = rewindAnimation.pop_back()
+		var lastFrame = rewindFrame.pop_back()
+		position = lastPos
+		velocity = lastVelocity
+		$AnimatedSprite2D.animation = lastAnimation
+		$AnimatedSprite2D.frame = lastFrame
+		pass
+	
+
+func startRewind()->void:
+	rewinding = true;
+
+func stopRewind()->void:
+	rewinding = false;
