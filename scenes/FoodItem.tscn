@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ca8tdnchv11g1"]
+
+[ext_resource type="Script" uid="uid://dcy5pcc7xp65w" path="res://scripts/foodItem.gd" id="1_fbia8"]
+[ext_resource type="Texture2D" uid="uid://di1d7k6k0g4nc" path="res://icon.svg" id="2_2pnc4"]
+
+[node name="FoodItem" type="Node2D" unique_id=1918805835]
+script = ExtResource("1_fbia8")
+
+[node name="SpoilTimer" type="Timer" parent="." unique_id=1486501336]
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1511478110]
+texture = ExtResource("2_2pnc4")

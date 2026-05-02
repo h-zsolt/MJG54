@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dtcu0y8dpmn7o"]
+
+[ext_resource type="Script" uid="uid://bumedds6xsoik" path="res://scripts/test.gd" id="1_wen4y"]
+
+[node name="Test" type="Node2D" unique_id=1646949626]
+
+[node name="Node" type="Node" parent="." unique_id=498541931]
+script = ExtResource("1_wen4y")
+metadata/timerEnabled = false
+
+[node name="Timer" type="Timer" parent="Node" unique_id=1204869584]
