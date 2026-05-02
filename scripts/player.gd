@@ -29,11 +29,16 @@ func get_input():
 	# keyboard input
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	velocity = input_dir * speed
+	
+	if Input.is_action_just_pressed("rewind"):
+		startRewind()
+	if Input.is_action_just_released("rewind"):
+		stopRewind()
 
 func _physics_process(delta):
 	# movement
+	get_input()
 	if not rewinding:
-		get_input()
 		move_and_slide()
 		##Rewind recording
 		if rewindPostition.size() >= REWINDMAX:
@@ -72,19 +77,24 @@ func _physics_process(delta):
 		else:
 			$AnimatedSprite2D.play("idle-" + last_direction)
 	else:
-		var lastPos = rewindPostition.pop_back()
-		var lastVelocity = rewindVelocity.pop_back()
-		var lastAnimation = rewindAnimation.pop_back()
-		var lastFrame = rewindFrame.pop_back()
-		position = lastPos
-		velocity = lastVelocity
-		$AnimatedSprite2D.animation = lastAnimation
-		$AnimatedSprite2D.frame = lastFrame
+		if rewindPostition.size()>0:
+			var lastPos = rewindPostition.pop_back()
+			var lastVelocity = rewindVelocity.pop_back()
+			var lastAnimation = rewindAnimation.pop_back()
+			var lastFrame = rewindFrame.pop_back()
+			position = lastPos
+			velocity = lastVelocity
+			$AnimatedSprite2D.animation = lastAnimation
+			$AnimatedSprite2D.frame = lastFrame
+		else:
+			stopRewind()
 		pass
 	
 
 func startRewind()->void:
+	print("true")
 	rewinding = true;
 
 func stopRewind()->void:
+	print("false")
 	rewinding = false;
