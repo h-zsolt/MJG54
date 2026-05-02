@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://ckc6we4t38xsn"]
 
+[ext_resource type="Script" uid="uid://c1rtoh7hxf7fq" path="res://scripts/rewind_timer.gd" id="1_5pdws"]
 [ext_resource type="Texture2D" uid="uid://jxn7bv714jsi" path="res://assets/items/sword.png" id="1_6fi6k"]
 [ext_resource type="Texture2D" uid="uid://baug7puhie4hg" path="res://assets/items/axe.png" id="2_uo2fv"]
 [ext_resource type="Texture2D" uid="uid://rr3bttteon5s" path="res://assets/items/pickaxe.png" id="3_047uy"]
@@ -135,6 +136,7 @@ animations = [{
 }]
 
 [node name="Hud" type="CanvasLayer" unique_id=2077608873]
+script = ExtResource("1_5pdws")
 
 [node name="TopBar" type="Panel" parent="." unique_id=1226533678]
 anchors_preset = -1

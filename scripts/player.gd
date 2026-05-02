@@ -1,5 +1,9 @@
 extends CharacterBody2D
 
+signal rewindStarted()
+signal rewindStopped()
+signal rewindPoolAvailable(fullness: float)
+
 var speed : int
 var last_direction : String
 
@@ -57,6 +61,7 @@ func _physics_process(delta):
 		if rewindFacing.size() >= REWINDMAX:
 			rewindFacing.pop_front()
 		rewindFacing.append(last_direction)
+		rewindPoolAvailable.emit(rewindFacing.size() / 300.0) ##magic number because const is int :c
 		# restrict to window size
 		position = position.clamp(Vector2.ZERO, screen_size)
 		# player animation & rotation
@@ -100,8 +105,10 @@ func _physics_process(delta):
 
 func startRewind()->void:	
 	rewinding = true;
-	get_node("/root/Main/Hud/TopBar/RewindTimer").play("Drain")
+	rewindStarted.emit()
+	#get_node("/root/Main/Hud/TopBar/RewindTimer").play("Drain")
 
 func stopRewind()->void:
 	rewinding = false;
-	get_node("/root/Main/Hud/TopBar/RewindTimer").play("Recharge")
+	rewindStopped.emit()
+	#get_node("/root/Main/Hud/TopBar/RewindTimer").play("Recharge")
