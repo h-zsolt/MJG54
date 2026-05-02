@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ciit6jojuqbon"]
+
+[ext_resource type="Script" uid="uid://dcy5pcc7xp65w" path="res://scripts/foodItem.gd" id="1_fbia8"]
+[ext_resource type="Texture2D" uid="uid://jxn7bv714jsi" path="res://assets/items/sword.png" id="2_2pnc4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2pnc4"]
+radius = 32.572994
+
+[node name="FoodItem-Foo" type="Area2D" unique_id=1634368334]
+collision_layer = 32
+collision_mask = 512
+script = ExtResource("1_fbia8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1511478110]
+texture = ExtResource("2_2pnc4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2115119539]
+shape = SubResource("CircleShape2D_2pnc4")
+
+[node name="SpoilTimer" type="Timer" parent="." unique_id=1486501336]
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_area_2d_body_exited"]

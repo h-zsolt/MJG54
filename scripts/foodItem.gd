@@ -1,4 +1,4 @@
-extends Node2D
+extends Area2D
 
 var spoilTimer : Timer
 @export var foodData: FoodItem = FoodItem.new()
@@ -11,8 +11,30 @@ var rewindState: Array[FoodItem] = [FoodItem.new()]
 var rewindPosition: Array[Vector2]
 var rewindTimer: Array[float]
 
+var player_in_range := false
+
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	get_node("/root/Main/CharacterBody2D/InteractIcon").show()
+	player_in_range = true
+		
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	get_node("/root/Main/CharacterBody2D/InteractIcon").hide()
+	player_in_range = false
+
+func _process(delta: float):
+	var player = get_node("/root/Main/CharacterBody2D")
+	if player_in_range and Input.is_action_just_pressed("interact"):
+		print("Item Interacted With")
+		player.funkyfoo(foodData)
+		queue_free()
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print("Food Item in scene")
+	
 	spoilTimer = $SpoilTimer
 	spoilTimer.wait_time = foodData.spoilTime
 	##self.name = foodData.foodName
@@ -22,9 +44,10 @@ func _ready() -> void:
 	$Sprite2D.texture = foodData.spriteTexture
 
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+#func _process(delta: float) -> void:
+	#pass
 
 # Using physics_process for fixed amount of updates per second
 func _physics_process(delta: float) -> void:

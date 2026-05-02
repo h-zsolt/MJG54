@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://ca8tdnchv11g1"]
 
 [ext_resource type="Script" uid="uid://dcy5pcc7xp65w" path="res://scripts/foodItem.gd" id="1_fbia8"]
-[ext_resource type="Texture2D" uid="uid://di1d7k6k0g4nc" path="res://icon.svg" id="2_2pnc4"]
+[ext_resource type="Texture2D" uid="uid://jxn7bv714jsi" path="res://assets/items/sword.png" id="2_2pnc4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2pnc4"]
+radius = 32.572994
 
 [node name="FoodItem" type="Node2D" unique_id=1918805835]
 script = ExtResource("1_fbia8")
@@ -11,3 +14,8 @@ autostart = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1511478110]
 texture = ExtResource("2_2pnc4")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1786608067]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2115119539]
+shape = SubResource("CircleShape2D_2pnc4")

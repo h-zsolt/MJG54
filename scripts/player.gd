@@ -101,7 +101,6 @@ func _physics_process(delta):
 		else:
 			stopRewind()
 		pass
-	
 
 func startRewind()->void:	
 	rewinding = true;
@@ -112,3 +111,9 @@ func stopRewind()->void:
 	rewinding = false;
 	rewindStopped.emit()
 	#get_node("/root/Main/Hud/TopBar/RewindTimer").play("Recharge")
+
+func funkyfoo(data):
+	print("Reached Player")
+	print(data.foodName)
+	print(data.spoilTime)
+	pass
