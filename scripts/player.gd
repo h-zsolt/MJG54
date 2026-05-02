@@ -1,12 +1,18 @@
 extends CharacterBody2D
 
+<<<<<<< HEAD
 signal requestItemData(slot:int)
 signal identifyItem(node:Node)
+=======
+signal rewindStarted()
+signal rewindStopped()
+signal rewindPoolAvailable(fullness: float)
+>>>>>>> af3b7e5f4c2d9531c085fda3c23c7fe070961699
 
 var speed : int
 var last_direction : String
 
-const REWINDMAX: int = 300
+const REWINDMAX: int = 180
 var rewinding: bool
 var rewindPostition: Array[Vector2]
 var rewindVelocity: Array[Vector2]
@@ -64,6 +70,7 @@ func _physics_process(delta):
 		if rewindFacing.size() >= REWINDMAX:
 			rewindFacing.pop_front()
 		rewindFacing.append(last_direction)
+		rewindPoolAvailable.emit(rewindFacing.size() / 300.0) ##magic number because const is int :c
 		# restrict to window size
 		position = position.clamp(Vector2.ZERO, screen_size)
 		# player animation & rotation
@@ -93,6 +100,10 @@ func _physics_process(delta):
 			var lastVelocity = rewindVelocity.pop_back()
 			var lastAnimation = rewindAnimation.pop_back()
 			var lastFrame = rewindFrame.pop_back()
+<<<<<<< HEAD
+=======
+			#var lastFacing = rewindFrame.pop_back()
+>>>>>>> af3b7e5f4c2d9531c085fda3c23c7fe070961699
 			var lastFacing = rewindFacing.pop_back()
 			position = lastPos
 			velocity = lastVelocity
@@ -104,6 +115,7 @@ func _physics_process(delta):
 		pass
 	
 
+<<<<<<< HEAD
 var inventoryCallbackNode: Node
 func setInventoryCallbackNode(target: Node)-> void:
 	inventoryCallbackNode = target
@@ -123,7 +135,14 @@ func useStation(selection: int, station: UseStation)-> void:
 	
 
 func startRewind()->void:
+=======
+func startRewind()->void:	
+>>>>>>> af3b7e5f4c2d9531c085fda3c23c7fe070961699
 	rewinding = true;
+	rewindStarted.emit()
+	#get_node("/root/Main/Hud/TopBar/RewindTimer").play("Drain")
 
 func stopRewind()->void:
 	rewinding = false;
+	rewindStopped.emit()
+	#get_node("/root/Main/Hud/TopBar/RewindTimer").play("Recharge")

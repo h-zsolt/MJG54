@@ -1,11 +1,24 @@
-[gd_scene format=3 uid="uid://b4do0yxve65pe"]
+[gd_scene format=3 uid="uid://88dpadw0kjfx"]
 
 [ext_resource type="PackedScene" uid="uid://div11nohbacd" path="res://maps/garden_map.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://ukg0xtyck5xq" path="res://scripts/main.gd" id="1_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://clfch7yy5s1j6" path="res://scenes/player.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://ckc6we4t38xsn" path="res://scenes/hud.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://d4fr0qbbeoiwn" path="res://interactables/interactiable_item_test.tscn" id="4_jyhfs"]
 
 [node name="Main" type="Node2D" unique_id=409236311]
+script = ExtResource("1_tbgi4")
 
 [node name="GardenMap" parent="." unique_id=575435717 instance=ExtResource("1_o5qli")]
 
 [node name="CharacterBody2D" parent="." unique_id=2087221926 instance=ExtResource("2_0wfyh")]
 position = Vector2(966, 145)
+
+[node name="Hud" parent="." unique_id=2077608873 instance=ExtResource("3_sugp2")]
+
+[node name="InteractiableItemTest" parent="." unique_id=566401312 instance=ExtResource("4_jyhfs")]
+position = Vector2(341, 166)
+scale = Vector2(0.75, 0.75)
+
+[connection signal="rewindStarted" from="CharacterBody2D" to="Hud" method="startDrainAnim"]
+[connection signal="rewindStopped" from="CharacterBody2D" to="Hud" method="startRechargeAnim"]
