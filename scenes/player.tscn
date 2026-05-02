@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://4ihc4bm3d7eh" path="res://assets/player/Player.png" id="1_g2els"]
 [ext_resource type="Script" uid="uid://cpfkn5iods1vn" path="res://scripts/player.gd" id="1_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://c0em35dl2ixw6" path="res://assets/player/Player_Actions.png" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://nqq13wpot1xi" path="res://assets/ui/Keyboard Letters and Symbols.png" id="4_dqkch"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
 atlas = ExtResource("1_g2els")
@@ -917,6 +918,28 @@ animations = [{
 radius = 3.5
 height = 7.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_uukdq"]
+atlas = ExtResource("4_dqkch")
+region = Rect2(64, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3k3j0"]
+atlas = ExtResource("4_dqkch")
+region = Rect2(64, 144, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qhqgy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uukdq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3k3j0")
+}],
+"loop": true,
+"name": &"Pulse",
+"speed": 5.0
+}]
+
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=2087221926]
 z_index = 4
 scale = Vector2(2, 2)
@@ -925,9 +948,18 @@ script = ExtResource("1_qhqgy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=603032934]
 sprite_frames = SubResource("SpriteFrames_uukdq")
-animation = &"chop-w"
+animation = &"idle-s"
 autoplay = "idle-s"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1149229112]
 position = Vector2(-0.5, 3.5)
 shape = SubResource("CapsuleShape2D_770dr")
+
+[node name="InteractIcon" type="AnimatedSprite2D" parent="." unique_id=1928203052]
+visible = false
+position = Vector2(0, -17)
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_qhqgy")
+animation = &"Pulse"
+autoplay = "Pulse"
+frame_progress = 0.62977695

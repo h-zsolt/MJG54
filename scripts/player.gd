@@ -7,7 +7,7 @@ signal rewindPoolAvailable(fullness: float)
 var speed : int
 var last_direction : String
 
-const REWINDMAX: int = 300
+const REWINDMAX: int = 180
 var rewinding: bool
 var rewindPostition: Array[Vector2]
 var rewindVelocity: Array[Vector2]

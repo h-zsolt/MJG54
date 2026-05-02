@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://d4fr0qbbeoiwn"]
+
+[ext_resource type="Texture2D" uid="uid://cnmpn6qja34p8" path="res://assets/tilesets/garden/decorations/Outdoor_Decor_Free.png" id="1_i7xf7"]
+[ext_resource type="Script" uid="uid://tscjwluy3hpf" path="res://scripts/interactiable_item_test.gd" id="1_thveu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thveu"]
+atlas = ExtResource("1_i7xf7")
+region = Rect2(64, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4ko7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thveu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ko7s"]
+radius = 18.248287
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_thveu"]
+radius = 40.0
+
+[node name="InteractiableItemTest" type="CharacterBody2D" unique_id=566401312]
+script = ExtResource("1_thveu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=384435430]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_4ko7s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2074781656]
+shape = SubResource("CircleShape2D_4ko7s")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1289841320]
+collision_layer = 32
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1528447412]
+shape = SubResource("CircleShape2D_thveu")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

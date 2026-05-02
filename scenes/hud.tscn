@@ -149,7 +149,7 @@ grow_horizontal = 2
 size_flags_vertical = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Inventory_1" type="Panel" parent="TopBar" unique_id=696717911]
+[node name="Inventory_0" type="Panel" parent="TopBar" unique_id=696717911]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -163,12 +163,12 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Slot_Icon_1" type="Sprite2D" parent="TopBar/Inventory_1" unique_id=545511019]
+[node name="Slot_Icon_0" type="Sprite2D" parent="TopBar/Inventory_0" unique_id=545511019]
 position = Vector2(20, 20)
 scale = Vector2(2, 2)
 texture = ExtResource("1_6fi6k")
 
-[node name="Inventory_2" type="Panel" parent="TopBar" unique_id=1140310661]
+[node name="Inventory_1" type="Panel" parent="TopBar" unique_id=1140310661]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -182,12 +182,12 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Slot_Icon_2" type="Sprite2D" parent="TopBar/Inventory_2" unique_id=1072921127]
+[node name="Slot_Icon_1" type="Sprite2D" parent="TopBar/Inventory_1" unique_id=1072921127]
 position = Vector2(20, 20)
 scale = Vector2(2, 2)
 texture = ExtResource("2_uo2fv")
 
-[node name="Inventory_3" type="Panel" parent="TopBar" unique_id=847055437]
+[node name="Inventory_2" type="Panel" parent="TopBar" unique_id=847055437]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -201,12 +201,12 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Slot_Icon_3" type="Sprite2D" parent="TopBar/Inventory_3" unique_id=1345011431]
+[node name="Slot_Icon_2" type="Sprite2D" parent="TopBar/Inventory_2" unique_id=1345011431]
 position = Vector2(20, 20)
 scale = Vector2(2, 2)
 texture = ExtResource("3_047uy")
 
-[node name="Inventory_4" type="Panel" parent="TopBar" unique_id=2082294789]
+[node name="Inventory_3" type="Panel" parent="TopBar" unique_id=2082294789]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -220,12 +220,12 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Slot_Icon_4" type="Sprite2D" parent="TopBar/Inventory_4" unique_id=2004442099]
+[node name="Slot_Icon_3" type="Sprite2D" parent="TopBar/Inventory_3" unique_id=2004442099]
 position = Vector2(20, 20)
 scale = Vector2(2, 2)
 texture = ExtResource("4_5pdws")
 
-[node name="Inventory_5" type="Panel" parent="TopBar" unique_id=718686221]
+[node name="Inventory_4" type="Panel" parent="TopBar" unique_id=718686221]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -239,12 +239,12 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Slot_Icon_5" type="Sprite2D" parent="TopBar/Inventory_5" unique_id=1296426632]
+[node name="Slot_Icon_4" type="Sprite2D" parent="TopBar/Inventory_4" unique_id=1296426632]
 position = Vector2(20, 20)
 scale = Vector2(2, 2)
 texture = ExtResource("4_5pdws")
 
-[node name="Inventory_6" type="Panel" parent="TopBar" unique_id=1181353253]
+[node name="Inventory_5" type="Panel" parent="TopBar" unique_id=1181353253]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -258,12 +258,12 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Slot_Icon_6" type="Sprite2D" parent="TopBar/Inventory_6" unique_id=1701004060]
+[node name="Slot_Icon_5" type="Sprite2D" parent="TopBar/Inventory_5" unique_id=1701004060]
 position = Vector2(20, 20)
 scale = Vector2(2, 2)
 texture = ExtResource("4_5pdws")
 
-[node name="Inventory_7" type="Panel" parent="TopBar" unique_id=621701869]
+[node name="Inventory_6" type="Panel" parent="TopBar" unique_id=621701869]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -277,12 +277,12 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Slot_Icon_7" type="Sprite2D" parent="TopBar/Inventory_7" unique_id=403942994]
+[node name="Slot_Icon_6" type="Sprite2D" parent="TopBar/Inventory_6" unique_id=403942994]
 position = Vector2(20, 20)
 scale = Vector2(2, 2)
 texture = ExtResource("4_5pdws")
 
-[node name="Inventory_8" type="Panel" parent="TopBar" unique_id=1209503017]
+[node name="Inventory_7" type="Panel" parent="TopBar" unique_id=1209503017]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -296,12 +296,12 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Slot_Icon_8" type="Sprite2D" parent="TopBar/Inventory_8" unique_id=1888404797]
+[node name="Slot_Icon_7" type="Sprite2D" parent="TopBar/Inventory_7" unique_id=1888404797]
 position = Vector2(20, 20)
 scale = Vector2(2, 2)
 texture = ExtResource("4_5pdws")
 
-[node name="Inventory_9" type="Panel" parent="TopBar" unique_id=455705784]
+[node name="Inventory_8" type="Panel" parent="TopBar" unique_id=455705784]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -315,12 +315,12 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Slot_Icon_9" type="Sprite2D" parent="TopBar/Inventory_9" unique_id=882624594]
+[node name="Slot_Icon_8" type="Sprite2D" parent="TopBar/Inventory_8" unique_id=882624594]
 position = Vector2(20, 20)
 scale = Vector2(2, 2)
 texture = ExtResource("4_5pdws")
 
-[node name="Inventory_0" type="Panel" parent="TopBar" unique_id=251634344]
+[node name="Inventory_9" type="Panel" parent="TopBar" unique_id=251634344]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -334,7 +334,7 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Slot_Icon_0" type="Sprite2D" parent="TopBar/Inventory_0" unique_id=1535473176]
+[node name="Slot_Icon_9" type="Sprite2D" parent="TopBar/Inventory_9" unique_id=1535473176]
 position = Vector2(20, 20)
 scale = Vector2(2, 2)
 texture = ExtResource("4_5pdws")
