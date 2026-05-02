@@ -24,6 +24,7 @@ func addToInventory(item: Node) -> bool:
 		if not slotTable.has(i):
 			slotTable[i]=item
 			self.add_child(item)
+			#$"..".identifyItem.connect()
 			##TODO: Disable Sprite2D
 			##TODO: Enable UI visual
 	return true

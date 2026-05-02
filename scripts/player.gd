@@ -101,17 +101,17 @@ func _physics_process(delta):
 	
 
 var inventoryCallbackNode: Node
-func setInventoryCallbackNode(target: Node):
+func setInventoryCallbackNode(target: Node)-> void:
 	inventoryCallbackNode = target
 
-func initInvHandshake(selection: int):
+func initInvHandshake(selection: int)-> void:
 	requestItemData.emit(selection)
 
-func initItemDataRequest(node: Node):
+func initItemDataRequest(node: Node)-> void:
 	identifyItem.emit(node)
 
 var itemDataCallback: FoodItem
-func setItemDataCallback(itemData: FoodItem):
+func setItemDataCallback(itemData: FoodItem)-> void:
 	itemDataCallback = itemData
 
 func useStation(selection: int, station: UseStation)-> void:
