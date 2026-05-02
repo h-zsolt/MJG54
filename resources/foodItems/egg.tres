@@ -1,11 +1,10 @@
 [gd_resource type="Resource" script_class="FoodItem" format=3 uid="uid://bb4ji2mvjo3b2"]
 
-[ext_resource type="Script" uid="uid://4qv14xx6jngi" path="res://resourceScripts/foodItemResource.gd" id="1_btil7"]
+[ext_resource type="Script" uid="uid://4qv14xx6jngi" path="res://resourceScripts/foodItemResource.gd" id="1_pmx70"]
 
 [resource]
-script = ExtResource("1_btil7")
-spoiling = null
+script = ExtResource("1_pmx70")
+spoiling = true
 spoilTime = 60.0
-foodName = null
-usageTable = null
+foodName = "egg"
 metadata/_custom_type_script = "uid://4qv14xx6jngi"
