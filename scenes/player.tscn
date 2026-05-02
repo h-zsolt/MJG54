@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cpfkn5iods1vn" path="res://scripts/player.gd" id="1_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://c0em35dl2ixw6" path="res://assets/player/Player_Actions.png" id="2_qhqgy"]
 [ext_resource type="Script" uid="uid://brp6eocihfcrf" path="res://scripts/inventory.gd" id="4_dqkch"]
+[ext_resource type="PackedScene" uid="uid://clqgwsvqw3sd5" path="res://scenes/FoodItem.tscn" id="5_qlg0r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
 atlas = ExtResource("1_g2els")
@@ -935,6 +936,8 @@ shape = SubResource("CapsuleShape2D_770dr")
 
 [node name="Inventory" type="Node" parent="." unique_id=1031191945]
 script = ExtResource("4_dqkch")
+
+[node name="FoodItem" parent="Inventory" unique_id=1918805835 instance=ExtResource("5_qlg0r")]
 
 [connection signal="requestItemData" from="." to="Inventory" method="getItem"]
 [connection signal="sendItemData" from="Inventory" to="." method="setInventoryCallbackNode"]

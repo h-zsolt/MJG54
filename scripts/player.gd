@@ -16,6 +16,7 @@ var rewindFacing: Array[String]
 
 # temp
 var screen_size: Vector2
+var testNode: Node
 
 func _ready():
 	
@@ -28,6 +29,9 @@ func _ready():
 	
 	# Set player to south facing on load
 	last_direction = "s"
+	testNode = $Inventory/FoodItem
+	for i in testNode.get_signal_list():
+		print(i)
 
 func get_input():
 	# keyboard input
