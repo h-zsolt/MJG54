@@ -9,6 +9,7 @@ var rewindPostition: Array[Vector2]
 var rewindVelocity: Array[Vector2]
 var rewindAnimation: Array[StringName]
 var rewindFrame: Array[int]
+var rewindFacing: Array[String]
 
 # temp
 var screen_size: Vector2
@@ -53,6 +54,9 @@ func _physics_process(delta):
 		if rewindFrame.size() >= REWINDMAX:
 			rewindFrame.pop_front()
 		rewindFrame.append($AnimatedSprite2D.frame)
+		if rewindFacing.size() >= REWINDMAX:
+			rewindFacing.pop_front()
+		rewindFacing.append(last_direction)
 		# restrict to window size
 		position = position.clamp(Vector2.ZERO, screen_size)
 		# player animation & rotation
@@ -82,10 +86,12 @@ func _physics_process(delta):
 			var lastVelocity = rewindVelocity.pop_back()
 			var lastAnimation = rewindAnimation.pop_back()
 			var lastFrame = rewindFrame.pop_back()
+			var lastFacing = rewindFrame.pop_back()
 			position = lastPos
 			velocity = lastVelocity
 			$AnimatedSprite2D.animation = lastAnimation
 			$AnimatedSprite2D.frame = lastFrame
+			last_direction = lastFacing
 		else:
 			stopRewind()
 		pass
