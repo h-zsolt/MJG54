@@ -86,7 +86,8 @@ func _physics_process(delta):
 			var lastVelocity = rewindVelocity.pop_back()
 			var lastAnimation = rewindAnimation.pop_back()
 			var lastFrame = rewindFrame.pop_back()
-			var lastFacing = rewindFrame.pop_back()
+			#var lastFacing = rewindFrame.pop_back()
+			var lastFacing = rewindFacing.pop_back()
 			position = lastPos
 			velocity = lastVelocity
 			$AnimatedSprite2D.animation = lastAnimation
@@ -97,8 +98,10 @@ func _physics_process(delta):
 		pass
 	
 
-func startRewind()->void:
+func startRewind()->void:	
 	rewinding = true;
+	get_node("/root/Main/Hud/TopBar/RewindTimer").play("Drain")
 
 func stopRewind()->void:
 	rewinding = false;
+	get_node("/root/Main/Hud/TopBar/RewindTimer").play("Recharge")
