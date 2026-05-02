@@ -92,9 +92,7 @@ func _physics_process(delta):
 	
 
 func startRewind()->void:
-	print("true")
 	rewinding = true;
 
 func stopRewind()->void:
-	print("false")
 	rewinding = false;
