@@ -7,4 +7,7 @@ script = ExtResource("1_pmx70")
 spoiling = true
 spoilTime = 60.0
 foodName = "egg"
+usageTable = Dictionary[String, bool]({
+"pan": true
+})
 metadata/_custom_type_script = "uid://4qv14xx6jngi"
