@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+signal requestItemData(slot:int)
+signal identifyItem(node:Node)
+
 var speed : int
 var last_direction : String
 
@@ -86,7 +89,7 @@ func _physics_process(delta):
 			var lastVelocity = rewindVelocity.pop_back()
 			var lastAnimation = rewindAnimation.pop_back()
 			var lastFrame = rewindFrame.pop_back()
-			var lastFacing = rewindFrame.pop_back()
+			var lastFacing = rewindFacing.pop_back()
 			position = lastPos
 			velocity = lastVelocity
 			$AnimatedSprite2D.animation = lastAnimation
@@ -95,6 +98,24 @@ func _physics_process(delta):
 		else:
 			stopRewind()
 		pass
+	
+
+var inventoryCallbackNode: Node
+func setInventoryCallbackNode(target: Node):
+	inventoryCallbackNode = target
+
+func initInvHandshake(selection: int):
+	requestItemData.emit(selection)
+
+func initItemDataRequest(node: Node):
+	identifyItem.emit(node)
+
+var itemDataCallback: FoodItem
+func setItemDataCallback(itemData: FoodItem):
+	itemDataCallback = itemData
+
+func useStation(selection: int, station: UseStation)-> void:
+	initInvHandshake(selection)
 	
 
 func startRewind()->void:

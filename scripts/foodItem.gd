@@ -65,3 +65,6 @@ func startRewind()->void:
 func stopRewind()->void:
 	resumeSpoiling()
 	rewinding = false;
+
+func getData() -> FoodItem:
+	return foodData
