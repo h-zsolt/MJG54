@@ -964,3 +964,5 @@ sprite_frames = SubResource("SpriteFrames_qhqgy")
 animation = &"Pulse"
 autoplay = "Pulse"
 frame_progress = 0.62977695
+
+[node name="Inventory" type="Node" parent="." unique_id=880259074]

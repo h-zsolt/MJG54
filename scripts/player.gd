@@ -3,6 +3,7 @@ extends CharacterBody2D
 signal rewindStarted()
 signal rewindStopped()
 signal rewindPoolAvailable(fullness: float)
+signal updateInventoryDisplay()
 
 var speed : int
 var last_direction : String
@@ -18,6 +19,9 @@ var rewindVelocity: Array[Vector2]
 var rewindAnimation: Array[StringName]
 var rewindFrame: Array[int]
 var rewindFacing: Array[String]
+
+var inventory: Dictionary[int, Node]
+var inventorySize: int = 5
 
 # temp
 var screen_size: Vector2
@@ -101,7 +105,6 @@ func _physics_process(delta):
 			var lastVelocity = rewindVelocity.pop_back()
 			var lastAnimation = rewindAnimation.pop_back()
 			var lastFrame = rewindFrame.pop_back()
-			#var lastFacing = rewindFrame.pop_back()
 			var lastFacing = rewindFacing.pop_back()
 			position = lastPos
 			velocity = lastVelocity
@@ -132,8 +135,12 @@ func _enable_banana_time():
 
 
 # USE THIS AS AN ENTRY INTO PUTTING ITEMS FROM FIELD TO INVENTORY
-func funkyfoo(data):
-	print("Reached Player")
-	print(data.foodName)
-	print(data.spoilTime)
-	pass
+func funkyfoo(data, node):
+	for i in range(inventorySize):
+		if not inventory.has(i):
+			print("Reparenting for slot "+str(i))
+			inventory[i]=node
+			node.reparent($Inventory)
+			updateInventoryDisplay.emit()
+			break
+	
