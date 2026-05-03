@@ -21,7 +21,7 @@ var rewindFrame: Array[int]
 var rewindFacing: Array[String]
 
 var inventory: Dictionary[int, Node]
-var inventorySize: int = 5
+var inventorySize: int = 6
 
 # temp
 var screen_size: Vector2

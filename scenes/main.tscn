@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://clfch7yy5s1j6" path="res://scenes/player.tscn" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://ckc6we4t38xsn" path="res://scenes/hud.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://d4fr0qbbeoiwn" path="res://interactables/interactiable_item_test.tscn" id="4_jyhfs"]
-[ext_resource type="PackedScene" path="res://scenes/FoodItem - Copy.tscn" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://ciit6jojuqbon" path="res://scenes/FoodItem - Copy.tscn" id="6_tefeu"]
 [ext_resource type="Resource" uid="uid://bb4ji2mvjo3b2" path="res://resources/foodItems/egg.tres" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://3pjitt73sg34" path="res://scenes/bananaTime.tscn" id="8_tipki"]
 [ext_resource type="Resource" uid="uid://cveht1hn1ablk" path="res://resources/foodItems/friedEgg.tres" id="9_85g3d"]
@@ -28,8 +28,15 @@ scale = Vector2(0.75, 0.75)
 [node name="FoodItem-Foo" parent="." unique_id=1634368334 instance=ExtResource("6_tefeu")]
 z_index = 6
 position = Vector2(260, 275)
+scale = Vector2(0.75, 0.75)
 foodData = ExtResource("7_o6xl0")
 spoilInto = ExtResource("9_85g3d")
+
+[node name="FoodItem-Foo2" parent="." unique_id=396979352 instance=ExtResource("6_tefeu")]
+z_index = 6
+position = Vector2(328, 246)
+scale = Vector2(0.75, 0.75)
+foodData = ExtResource("9_85g3d")
 
 [connection signal="rewindStarted" from="CharacterBody2D" to="Hud" method="startDrainAnim"]
 [connection signal="rewindStopped" from="CharacterBody2D" to="Hud" method="startRechargeAnim"]
