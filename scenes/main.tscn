@@ -7,9 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://d4fr0qbbeoiwn" path="res://interactables/interactiable_item_test.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://ciit6jojuqbon" path="res://scenes/FoodItem - Copy.tscn" id="6_tefeu"]
 [ext_resource type="Resource" uid="uid://bb4ji2mvjo3b2" path="res://resources/foodItems/egg.tres" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://3pjitt73sg34" path="res://scenes/bananaTime.tscn" id="8_tipki"]
 
 [node name="Main" type="Node2D" unique_id=409236311]
 script = ExtResource("1_tbgi4")
+banana_scene = ExtResource("8_tipki")
 
 [node name="GardenMap" parent="." unique_id=575435717 instance=ExtResource("1_o5qli")]
 

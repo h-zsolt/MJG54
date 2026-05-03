@@ -5,7 +5,7 @@ var player_in_range := false
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	get_node("/root/Main/CharacterBody2D/InteractIcon").show()
 	player_in_range = true
-		
+
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	get_node("/root/Main/CharacterBody2D/InteractIcon").hide()
 	player_in_range = false

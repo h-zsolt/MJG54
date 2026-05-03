@@ -9,6 +9,10 @@ var last_direction : String
 
 const REWINDMAX: int = 180
 var rewinding: bool
+
+# Added this section to make banana's 'important'
+var canRewind: bool
+
 var rewindPostition: Array[Vector2]
 var rewindVelocity: Array[Vector2]
 var rewindAnimation: Array[StringName]
@@ -19,6 +23,9 @@ var rewindFacing: Array[String]
 var screen_size: Vector2
 
 func _ready():
+	# The following line is only needed when we need to check the path to something in the scene on startup.
+	# Don't delete as it's strangely useful.
+	# get_tree().current_scene.print_tree_pretty()
 	
 	# temp to stop us walking off the screen
 	screen_size = get_viewport_rect().size
@@ -29,6 +36,9 @@ func _ready():
 	
 	# Set player to south facing on load
 	last_direction = "s"
+	
+	# Setting base variable for the game launch
+	canRewind = true
 
 func get_input():
 	# keyboard input
@@ -102,16 +112,26 @@ func _physics_process(delta):
 			stopRewind()
 		pass
 
-func startRewind()->void:	
-	rewinding = true;
-	rewindStarted.emit()
-	#get_node("/root/Main/Hud/TopBar/RewindTimer").play("Drain")
+func startRewind()->void:
+	if canRewind == true:
+		rewinding = true
+		rewindStarted.emit()
+	else:
+		print("You need more potassium bro!")
 
 func stopRewind()->void:
-	rewinding = false;
+	rewinding = false
 	rewindStopped.emit()
-	#get_node("/root/Main/Hud/TopBar/RewindTimer").play("Recharge")
+	canRewind = false # This will stay until the player picks up a banana.
 
+# On banana pickup, enable rewind ability and show a full rewind bar.
+func _enable_banana_time():
+	print("Basically, it's banana time.")
+	canRewind = true
+	get_node("/root/Main/Hud/TopBar/RewindTimer").play("Full")
+
+
+# USE THIS AS AN ENTRY INTO PUTTING ITEMS FROM FIELD TO INVENTORY
 func funkyfoo(data):
 	print("Reached Player")
 	print(data.foodName)
