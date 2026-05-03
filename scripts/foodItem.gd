@@ -31,6 +31,15 @@ func _process(delta: float):
 		player.funkyfoo(foodData, self)
 		queue_free()
 
+func triggerSpoilage()->void:
+	foodData = spoilInto
+	$Sprite2D.texture = spoilInto.spriteTexture
+	print("update Texture")
+	##Hard coded, but time
+	if get_parent().name == "Inventory":
+		get_parent().get_parent().updateInventoryDisplay.emit()
+		print("emit spoilage to display")
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -42,6 +51,8 @@ func _ready() -> void:
 	if foodData.spoiling == false:
 		spoilTimer.paused = true
 		spoilTimer.wait_time = 409600.0
+	else:
+		spoilTimer.start()
 	$Sprite2D.texture = foodData.spriteTexture
 
 

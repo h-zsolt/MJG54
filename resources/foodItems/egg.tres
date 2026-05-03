@@ -6,7 +6,6 @@
 [resource]
 script = ExtResource("1_pmx70")
 spoiling = true
-spoilTime = 60.0
 foodName = "egg"
 spriteTexture = ExtResource("2_5855i")
 usageTable = Dictionary[String, bool]({

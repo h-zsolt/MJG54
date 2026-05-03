@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" path="res://scenes/FoodItem - Copy.tscn" id="6_tefeu"]
 [ext_resource type="Resource" uid="uid://bb4ji2mvjo3b2" path="res://resources/foodItems/egg.tres" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://3pjitt73sg34" path="res://scenes/bananaTime.tscn" id="8_tipki"]
+[ext_resource type="Resource" uid="uid://cveht1hn1ablk" path="res://resources/foodItems/friedEgg.tres" id="9_85g3d"]
 
 [node name="Main" type="Node2D" unique_id=409236311]
 script = ExtResource("1_tbgi4")
@@ -28,6 +29,7 @@ scale = Vector2(0.75, 0.75)
 z_index = 6
 position = Vector2(260, 275)
 foodData = ExtResource("7_o6xl0")
+spoilInto = ExtResource("9_85g3d")
 
 [connection signal="rewindStarted" from="CharacterBody2D" to="Hud" method="startDrainAnim"]
 [connection signal="rewindStopped" from="CharacterBody2D" to="Hud" method="startRechargeAnim"]
