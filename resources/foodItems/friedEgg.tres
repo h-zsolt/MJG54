@@ -1,8 +1,12 @@
 [gd_resource type="Resource" script_class="FoodItem" format=3 uid="uid://cveht1hn1ablk"]
 
 [ext_resource type="Script" uid="uid://4qv14xx6jngi" path="res://resourceScripts/foodItemResource.gd" id="1_27jex"]
+[ext_resource type="Texture2D" uid="uid://derlaqc8rs5jh" path="res://assets/food/fried_egg.png" id="2_o807c"]
 
 [resource]
 script = ExtResource("1_27jex")
-spoilTime = 60.0
+spoiling = true
+spoilTime = 30.0
+foodName = "Fried Egg"
+spriteTexture = ExtResource("2_o807c")
 metadata/_custom_type_script = "uid://4qv14xx6jngi"
