@@ -13,7 +13,8 @@ var rewindTimer: Array[float]
 
 var player_in_range := false
 
-
+func getFoodData() -> FoodItem:
+	return foodData
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	get_node("/root/Main/CharacterBody2D/InteractIcon").show()
@@ -27,7 +28,7 @@ func _process(delta: float):
 	var player = get_node("/root/Main/CharacterBody2D")
 	if player_in_range and Input.is_action_just_pressed("interact"):
 		print("Item Interacted With")
-		player.funkyfoo(foodData)
+		player.funkyfoo(foodData, self)
 		queue_free()
 
 
